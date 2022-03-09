@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 import { BASE_URL } from "../../constants/url"
+import { Buttons, CardPokimon } from "./styled"
 // import { CardContainer } from "./styled"
 
 const CardPokemon = ({name, url}) =>{
@@ -18,12 +19,14 @@ const CardPokemon = ({name, url}) =>{
     }
     getPhoto(name)
     return (
-        <div>
+        <CardPokimon>
             <p>{name}</p>
             <img src={listaPhoto} alt={name} />
+            <Buttons>
             <button>Adicionar a pokedex</button>
             <button>Ver detalhes</button>
-        </div>
+            </Buttons>
+        </CardPokimon>
     )
 }
 
