@@ -10,7 +10,6 @@ const CardPokemon = ({name, url}) =>{
     const getPhoto = (name)=>{
         axios.get(`${BASE_URL}/${name}`)
         .then((response)=>{
-            console.log(response.data.sprites.front_default)
             setListaPhoto(response.data.sprites.front_default)
         })
         .catch((error)=>{
