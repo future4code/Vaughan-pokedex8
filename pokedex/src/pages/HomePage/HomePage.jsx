@@ -1,31 +1,33 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { useEffect} from "react";
 import CardPokemon from "../../components/CardPokemon/CardPokemon";
 import { BASE_URL } from "../../constants/url";
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 import { CardContainer, ContainerPokemon, Header } from "./styled";
 // import useRequestData from "../../hooks/useRequestData";
 
 const HomePage = () => {
-  const [listPokemon, setListPokemon] = useState([])
+  // const [listPokemon, setListPokemon] = useState([])
+     const {listaPokemon, setListaPokemon} = useContext(GlobalStateContext)
+     
   useEffect(() => {
     getPokemon()
   }, [])
   const getPokemon = () => {
     axios.get(`${BASE_URL}`)
       .then((response) => {
-        // console.log(response.data.results)
-        setListPokemon(response.data.results)
-
+        setListaPokemon(response.data.results)
       })
       .catch((error) => {
         console.log(error.response)
       })
   }
-
+   console.log(listaPokemon)
   return (
     <Header>
       <ContainerPokemon>
-        {listPokemon && listPokemon.map((pokemon) => {
+        {listaPokemon && listaPokemon.map((pokemon) => {
           return (
             
             <CardContainer key={pokemon.url}>
