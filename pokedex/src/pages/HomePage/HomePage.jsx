@@ -26,12 +26,12 @@ const HomePage = () => {
   const addPokemonInPokedex = (pokemon, index)=>{
     const newCart = [...cart]
     const indexPokemon = newCart.findIndex((pokemonCart)=>{
-      return index = pokemonCart
+      return index === pokemonCart
     })
     if(indexPokemon === -1){
       newCart.push({...pokemon, amount: 1})
+      
     }
-   
 
     setCart(newCart)
   }
