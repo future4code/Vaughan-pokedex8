@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../components/Header/Header";
-import { GlobalState } from "../global/GlobalState";
+import  GlobalState  from "../global/GlobalState";
 import HomePage from "../pages/HomePage/HomePage";
 import PokedexPage from "../pages/PokedexPage/PokedexPage";
 import PokedexDetailPage from "../pages/PokemonDetailPage/PokemonDetailPage";
