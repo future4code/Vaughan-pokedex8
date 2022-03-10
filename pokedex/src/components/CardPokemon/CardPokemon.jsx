@@ -4,9 +4,10 @@ import { BASE_URL } from "../../constants/url"
 import { Buttons, CardPokimon } from "./styled"
 // import { CardContainer } from "./styled"
 
-const CardPokemon = ({name, url}) =>{
+const CardPokemon = ({name}) =>{
     // console.log(name)
     const [listaPhoto, setListaPhoto] = useState([])
+    
     const getPhoto = (name)=>{
         axios.get(`${BASE_URL}/${name}`)
         .then((response)=>{
