@@ -9,7 +9,7 @@ import { CardContainer, ContainerPokemon, Header } from "./styled";
 
 const HomePage = () => {
   // const [listPokemon, setListPokemon] = useState([])
-     const {listaPokemon, setListaPokemon} = useContext(GlobalStateContext)
+     const {listaPokemon, setListaPokemon, cart, setCart} = useContext(GlobalStateContext)
      
   useEffect(() => {
     getPokemon()
@@ -23,17 +23,31 @@ const HomePage = () => {
         console.log(error.response)
       })
   }
-   console.log(listaPokemon)
+  const addPokemonInPokedex = (pokemon, index)=>{
+    const newCart = [...cart]
+    const indexPokemon = newCart.findIndex((pokemonCart)=>{
+      return index = pokemonCart
+    })
+    if(indexPokemon === -1){
+      newCart.push({...pokemon, amount: 1})
+    }
+   
+
+    setCart(newCart)
+  }
+   console.log("lista de pokemon",listaPokemon)
+   console.log("aqui é o cart",cart)
   return (
     <Header>
       <ContainerPokemon>
-        {listaPokemon && listaPokemon.map((pokemon) => {
+        {listaPokemon && listaPokemon.map((pokemon, index) => {
           return (
             
             <CardContainer key={pokemon.url}>
               <CardPokemon
                 name={pokemon.name}
                 url={pokemon.url}
+                addPokemon={() => addPokemonInPokedex(pokemon, index)}
               />
             </CardContainer>
           )

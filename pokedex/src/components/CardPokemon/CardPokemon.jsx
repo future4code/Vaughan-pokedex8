@@ -4,7 +4,7 @@ import { BASE_URL } from "../../constants/url"
 import { Buttons, CardPokimon } from "./styled"
 // import { CardContainer } from "./styled"
 
-const CardPokemon = ({name}) =>{
+const CardPokemon = ({name, addPokemon}) =>{
     // console.log(name)
     const [listaPhoto, setListaPhoto] = useState([])
     
@@ -18,12 +18,13 @@ const CardPokemon = ({name}) =>{
         })
     }
     getPhoto(name)
+    
     return (
         <CardPokimon>
             <p>{name}</p>
             <img src={listaPhoto} alt={name} />
             <Buttons>
-            <button>Adicionar a pokedex</button>
+            <button onClick={addPokemon}>Adicionar a pokedex</button>
             <button>Ver detalhes</button>
             </Buttons>
         </CardPokimon>
