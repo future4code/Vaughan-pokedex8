@@ -1,10 +1,13 @@
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { BASE_URL } from "../../constants/url"
+import { goToPokemonDetail } from "../../Router/coordinator"
 import { Buttons, CardPokimon } from "./styled"
 // import { CardContainer } from "./styled"
 
-const CardPokemon = ({name}) =>{
+const CardPokemon = ({name, addPokemon}) =>{
+    const navigate = useNavigate()
     // console.log(name)
     const [listaPhoto, setListaPhoto] = useState([])
     
@@ -18,13 +21,14 @@ const CardPokemon = ({name}) =>{
         })
     }
     getPhoto(name)
+    
     return (
         <CardPokimon>
             <p>{name}</p>
             <img src={listaPhoto} alt={name} />
             <Buttons>
-            <button>Adicionar a pokedex</button>
-            <button>Ver detalhes</button>
+            <button onClick={addPokemon}>Adicionar a pokedex</button>
+            <button onClick={() => goToPokemonDetail(navigate, name)}>Ver detalhes</button>
             </Buttons>
         </CardPokimon>
     )
