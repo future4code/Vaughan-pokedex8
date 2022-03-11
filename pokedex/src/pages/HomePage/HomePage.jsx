@@ -32,17 +32,16 @@ const HomePage = () => {
       newCart.push({...pokemon, amount: 1})
       
     }
-
     setCart(newCart)
   }
-   console.log("lista de pokemon",listaPokemon)
-   console.log("aqui é o cart",cart)
+  
+  
   return (
     <Header>
       <ContainerPokemon>
         {listaPokemon && listaPokemon.map((pokemon, index) => {
           return (
-            
+
             <CardContainer key={pokemon.url}>
               <CardPokemon
                 name={pokemon.name}
@@ -53,6 +52,7 @@ const HomePage = () => {
           )
         })}
       </ContainerPokemon>
+      <button onClick={() => console.log(cart) } >clicar</button>
     </Header>
   );
 }

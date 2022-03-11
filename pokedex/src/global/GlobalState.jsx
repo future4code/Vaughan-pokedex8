@@ -1,6 +1,6 @@
 import { GlobalStateContext } from "./GlobalStateContext"
 import { useState } from "react"
- const GlobalState = (props)=>{
+const GlobalState = (props)=>{
     const [listaPokemon, setListaPokemon] = useState([])
     const [cart, setCart] = useState([])
     return(
