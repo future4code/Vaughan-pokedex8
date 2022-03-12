@@ -32,7 +32,6 @@ const CardPokemon = ({name, addPokemon}) =>{
             <p>{name}</p>
             <img src={listaPhoto} alt={name} />
             <Buttons>
-            <button onClick={addPokemon}>Adicionar a pokedex</button>
             <button onClick={() => goToPokemonDetail(navigate, name)}>Ver detalhes</button>
             </Buttons>
         </CardPokimon>
