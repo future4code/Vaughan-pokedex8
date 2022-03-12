@@ -11,31 +11,24 @@ const HomePage = () => {
   // const [listPokemon, setListPokemon] = useState([])
      const {listaPokemon, setListaPokemon, cart, setCart} = useContext(GlobalStateContext)
      
-  useEffect(() => {
-    getPokemon()
-  }, [])
-  const getPokemon = () => {
-    axios.get(`${BASE_URL}`)
-      .then((response) => {
-        setListaPokemon(response.data.results)
-      })
-      .catch((error) => {
-        console.log(error.response)
-      })
-  }
-  const addPokemonInPokedex = (pokemon, index)=>{
+
+  const removeFromPokemon = (name) => {
+    const listaPokemonNewCart = [...listaPokemon];
+    const indexProduct = listaPokemon.findIndex((pokemon) => {
+      return pokemon.name === name;
+    });
+    listaPokemonNewCart.splice(indexProduct, 1);
+    setListaPokemon(listaPokemonNewCart);
+  };
+
+  const addPokemonInPokedex = (pokemon)=>{
     const newCart = [...cart]
-    const indexPokemon = newCart.findIndex((pokemonCart)=>{
-      return index === pokemonCart
-    })
-    if(indexPokemon === -1){
-      newCart.push({...pokemon, amount: 1})
-      
-    }
+    newCart.push({...pokemon})
     setCart(newCart)
+    removeFromPokemon(pokemon.name)
   }
   
-  
+
   return (
     <Header>
       <ContainerPokemon>
@@ -48,11 +41,12 @@ const HomePage = () => {
                 url={pokemon.url}
                 addPokemon={() => addPokemonInPokedex(pokemon, index)}
               />
+              <button onClick={() => addPokemonInPokedex(pokemon, index)}>Adicionar a pokedex</button>
             </CardContainer>
           )
         })}
       </ContainerPokemon>
-      <button onClick={() => console.log(cart) } >clicar</button>
+      <button onClick={() => console.log(listaPokemon) } >clicar</button>
     </Header>
   );
 }
