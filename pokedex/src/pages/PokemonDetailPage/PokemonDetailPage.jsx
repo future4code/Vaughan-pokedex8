@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CardDetailPokemon from "../../components/CardDetailPokemon/CardDetailPokemon";
 import { BASE_URL } from "../../constants/url";
-
+import { CardContainer, CardType, CardPokemon } from "./styled";
+import Typography from '@mui/material/Typography';
 const PokedexDetailPage = () => {
   const [pokemon, setPokemon] = useState({});
   const params = useParams();
@@ -29,17 +29,47 @@ const PokedexDetailPage = () => {
       });
   };
 
-  return <div>
-    {/* <CardDetailPokemon pokemon={pokemon} /> */}
-    <img src={pokemon.photoFront} alt={pokemon.name} />
-    <img src={pokemon.photoBack} alt={pokemon.name} />
-    <p>
-      {pokemon.name}
-    </p>
+  return <CardContainer>
+    <CardPokemon>
+      <Typography variant="h4" gutterBottom component="div">{pokemon.name}</Typography>
+      <img src={pokemon.photoBack} alt={pokemon.name} />
+      <div>
+        <Typography variant="h2" gutterBottom component="div">
+          Tipo:
+        </Typography>
+        {pokemon && pokemon?.type?.map((item, index) => {
+          return (
+            <CardType>
+              <Typography key={index} variant="h6" gutterBottom component="div">
+                {item.type.name}
+              </Typography>
+            </CardType>
+          )
+        })}
+        {pokemon && pokemon?.stats?.map((status, index) => {
+          return (
+            <p key={index}>
+              <strong>{status.stat.name}: </strong>
+              {status.base_stat}
+            </p>
+          )
+        })}
+      </div>
+    </CardPokemon>
+    {/* <Typography variant="h2" gutterBottom component="div">
+        Tipo:
+      </Typography>
+    
+
     {pokemon && pokemon?.type?.map((item, index) => {
-      return <p key={index}>
-        {item.type.name}
-      </p>;
+      return (
+        <CardType>
+          <Typography key={index} variant="h6" gutterBottom component="div">
+            {item.type.name}
+          </Typography>
+        </CardType>
+      )
+
     })}
     {pokemon && pokemon?.stats?.map((status, index) => {
       return (
@@ -49,8 +79,8 @@ const PokedexDetailPage = () => {
         </p>
 
       )
-    })}
-  </div>;
+    })} */}
+  </CardContainer>;
 };
 
 export default PokedexDetailPage;
