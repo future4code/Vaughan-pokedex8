@@ -39,7 +39,7 @@ const PokedexPage = () => {
 
   return (
     <ContainerPokemon>
-      {cart === false ? <div>Nao ha pokemons na pokedex</div> : cart && cart.map((pokemon, index) => {
+      {cart.length === 0 ? <div>Nao ha pokemons na pokedex</div> : cart && cart.map((pokemon, index) => {
         return (
           <CardContainer key={pokemon.url}>
             <CardPokemon
