@@ -36,10 +36,10 @@ const PokedexPage = () => {
     newCart.push({ ...pokemon })
     setListaPokemon(newCart)
   }
-  
+
   return (
     <ContainerPokemon>
-      {cart == false ? <div>Nao ha pokemons na pokedex</div> : cart && cart.map((pokemon, index) => {
+      {cart === false ? <div>Nao ha pokemons na pokedex</div> : cart && cart.map((pokemon, index) => {
         return (
           <CardContainer key={pokemon.url}>
             <CardPokemon
