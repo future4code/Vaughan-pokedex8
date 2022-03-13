@@ -1,9 +1,14 @@
 import React from "react";
 
-const CardDetailPokemon = ({pokemon}) => {
+const CardDetailPokemon = ({ pokemon }) => {
+
   return (
     <div>
-      <h1>Hello PokedexDetailPage</h1>
+
+      {pokemon ? pokemon.sprites.front_default : "nao"}
+
+      {/* <img src={pokemon.sprites.front_default} alt={pokemon.stats[0].stat.name} /> */}
+      {/* <h1>Hello PokedexDetailPage</h1>
       <img src={pokemon.sprites.front_default} />
       <img src={pokemon.sprites.back_default} />
       <h1>Tipo: {pokemon.types[0].type.name}</h1>
@@ -38,6 +43,7 @@ const CardDetailPokemon = ({pokemon}) => {
       <p>{pokemon.moves[2].move.name}</p>
       <p>{pokemon.moves[3].move.name}</p>
       <p>{pokemon.moves[4].move.name}</p>
+     */}
     </div>
   );
 };
