@@ -3,7 +3,7 @@
 Nome dos integrantes: 
 - Vitor Duarte
 - Jhordan Borges
-- Vinicius Ciclone
+- Vinicius Cicone
 
 Link do Surge: www.link.com.br
 
