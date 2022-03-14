@@ -1,22 +1,23 @@
 import styled from "styled-components";
+import Typography from '@mui/material/Typography';
 export const CardContainer = styled.div`
     min-width: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #aaaa;
+    margin: 24px;
 `
 // export const ContainerHeader = styled(Typography)`
 //     display: flex;
 //     justify-content: space-between;
 //     background-color: blue;
 // `
-export const CardHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-    background-color: blue;
+export const CardTitle = styled(Typography)`
+    text-align: center;
+
 `
+
 export const CardType = styled.div`
     display: flex;
     font-size: 12px;
@@ -35,7 +36,6 @@ export const CardPokemon = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-between;
     margin-bottom: 10px;
     background-color: #6B727A;
     color: #FFFFFF;
@@ -44,4 +44,9 @@ export const CardPokemon = styled.div`
     border-radius: 30px;
     min-height: 70px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+`
+export const CardPower = styled.div`
+    display: flex;
+    flex-direction: column-reverse;
+    margin-right: 300px;
 `
