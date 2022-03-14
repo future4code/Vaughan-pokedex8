@@ -5,12 +5,10 @@ Nome dos integrantes:
 - Jhordan Borges
 - Vinicius Cicone Barbosa
 
-Link do Surge: www.link.com.br
+Link do Surge: https://sharp-curran-a8dbc9.netlify.app
 
 O que funciona:
-- Item 1
-- Item 2
-
-O que não funciona: 
-- Item 3
-- Item 4
+Pagina principal 
+Pagina pokedex
+Status de cada pokemon
+E possivel passar um pokemon da pagina principal para a pokedex
