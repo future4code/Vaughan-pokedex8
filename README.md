@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Jhordan Borges
 - Vinicius Cicone Barbosa
 
-Link do Surge: https://sharp-curran-a8dbc9.netlify.app
+Link do Surge: vengeful-pen.surge.sh
 
   <i>O que funciona:</i>
 <p><b>Pagina principal</b></p>
