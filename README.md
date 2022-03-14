@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Jhordan Borges
 - Vinicius Cicone Barbosa
 
-Link do Surge: <a href="vengeful-pen.surge.sh" target="_blank">Pokedex</a> 
+Link do Surge: <a href="vengeful-pen.surge.sh">Pokedex</a> 
 
   <i>O que funciona:</i>
 <p><b>Pagina principal</b></p>
