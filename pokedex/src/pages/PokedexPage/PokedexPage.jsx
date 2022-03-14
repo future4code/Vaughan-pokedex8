@@ -1,26 +1,10 @@
-import { useContext, useState } from "react";
-import { BASE_URL } from "../../constants/url";
+import { useContext } from "react";
 import { GlobalStateContext } from "../../global/GlobalStateContext";
 import { CardContainer, ContainerPokemon } from "../HomePage/styled";
-import { Buttons } from "./styled";
-import axios from "axios";
 import CardPokemon from "../../components/CardPokemon/CardPokemon";
-
+import Button from '@mui/material/Button';
 const PokedexPage = () => {
-
   const { listaPokemon, setListaPokemon, cart, setCart } = useContext(GlobalStateContext)
-  const [listaPhoto, setListaPhoto] = useState([])
-
-  const getPhoto = (name) => {
-    axios.get(`${BASE_URL}/${name}`)
-      .then((response) => {
-        setListaPhoto(response.data.sprites.front_default)
-      })
-      .catch((error) => {
-        console.log(error.response)
-      })
-  }
-
   const removeFromCart = (pokemon) => {
     const newCart = [...cart];
     const indexProduct = cart.findIndex((pk) => {
@@ -30,13 +14,11 @@ const PokedexPage = () => {
     setCart(newCart);
     revertPokemon(pokemon)
   };
-
   const revertPokemon = (pokemon) => {
     const newCart = [...listaPokemon]
     newCart.push({ ...pokemon })
     setListaPokemon(newCart)
   }
-
   return (
     <ContainerPokemon>
       {cart.length === 0 ? <div>Nao ha pokemons na pokedex</div> : cart && cart.map((pokemon, index) => {
@@ -46,7 +28,7 @@ const PokedexPage = () => {
               name={pokemon.name}
               url={pokemon.url}
             />
-            <button onClick={() => removeFromCart(pokemon)}>Retornar a lista</button>
+            <Button color="primary" variant="contained" onClick={() => removeFromCart(pokemon)}>Retornar a lista</Button>
           </CardContainer>
         )
       })}

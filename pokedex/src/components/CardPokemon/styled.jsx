@@ -5,6 +5,10 @@ export const CardContainer = styled.div`
     justify-content:center;
     border: 0.3px solid black;
 `
+export const Img = styled.img`
+    width: 150px;
+    height: 150px;
+`
 
 export const CardPokimon = styled.div`
 display: flex;
