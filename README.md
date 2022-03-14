@@ -7,8 +7,8 @@ Nome dos integrantes:
 
 Link do Surge: https://sharp-curran-a8dbc9.netlify.app
 
-O que funciona:
-Pagina principal 
-Pagina pokedex
-Status de cada pokemon
-E possivel passar um pokemon da pagina principal para a pokedex
+  <i>O que funciona:</i>
+<p><b>Pagina principal</b></p>
+<p><b>Pagina pokedex</b></p>
+<p><b>Status de cada pokemon</b></p>
+<p><b>E possivel passar um pokemon da pagina principal para a pokedex</b></p>
